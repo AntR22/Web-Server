@@ -24,7 +24,7 @@ app.use(cors());
 // for logging errors (print to terminal)
 app.use(morgan('dev'));
 
-const uri = 'mongodb+srv://antonragusa:ustC1327%4089%3f@projects.qmbrp09.mongodb.net/?retryWrites=true&w=majority';
+const uri = 'serveruri';
 
 mongoose.connect(uri).then(() => console.log('Database connected')).catch((e) => console.log(e));
 
