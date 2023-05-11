@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  project-frontend:
+    container_name: frontend
+    restart: always
+    image: project-frontend:v10
+    networks: 
+      - shared-network
+    build:
+      context: project-frontend
+      dockerfile: Dockerfile
+    environment:
+      - REACT_APP_API_URL=http://project-backend:8700
+    ports:
+      - '3000:3000'
+    depends_on:
+      - project-backend
+
+  project-backend:
+    container_name: backend
+    restart: always
+    image: project-backend:v2
+    networks: 
+      - shared-network
+    build:
+      context: project-backend
+      dockerfile: Dockerfile
+    ports:
+      - '8700:8700'
+
+networks:
+  shared-network:
