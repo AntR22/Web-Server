@@ -258,9 +258,8 @@ function sendEmail(email: string, resetCode: string) {
     port: 587,
     secure: false,
     auth: {
-      user: 'apikey',
-      pass: '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'
-      // pass: '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'
+      user: "put user here",
+      pass: "put apikey here"
     }
   });
   const mail = {
